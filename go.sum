@@ -5,6 +5,12 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117012725-f25d1b70e09f h1:3OYp788Qz41xoGhlO17+wR6L7EhFpEER9ou92c1Mlxw=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117012725-f25d1b70e09f/go.mod h1:fbir/jgL3NCDJKFL67DEfNHKExrLSfyHSO1n6uDh/Vo=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117013229-dfe92c2d563f h1:c9DEPjITr4En9VB1GjCm5yoVob4/cQHO7R2ReJkvdd8=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117013229-dfe92c2d563f/go.mod h1:fbir/jgL3NCDJKFL67DEfNHKExrLSfyHSO1n6uDh/Vo=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117015058-6772995afbfa h1:a/wqGUngAzl033LhKWSu0PCkp9TFArm+Vg7q5YX5yw8=
+github.com/tjamet/go-github-action-toolkit v0.0.0-20200117015058-6772995afbfa/go.mod h1:fbir/jgL3NCDJKFL67DEfNHKExrLSfyHSO1n6uDh/Vo=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=

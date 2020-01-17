@@ -2,31 +2,32 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/tjamet/go-github-action-toolkit/core"
 )
 
 var now = func() time.Time {
 	return time.Now()
 }
 
-func runMain(w io.Writer) {
+func runMain() {
 	fmt.Println("hello world")
 	sleep := os.Getenv("INPUT_MILLISECONDS")
-	fmt.Fprintf(w, "::debug::Waiting %s milliseconds\n", sleep)
-	fmt.Fprintln(w, "::debug::"+now().String())
+	core.Debug(fmt.Sprintf("Waiting %s milliseconds", sleep))
+	core.Debug(now().String())
 	delay, err := strconv.Atoi(sleep)
 	if err != nil {
-		fmt.Fprintln(w, "::error::"+err.Error())
+		core.Error(err.Error())
 		return
 	}
 	time.Sleep(time.Duration(delay) * time.Millisecond)
-	fmt.Fprintln(w, "::debug::"+now().String())
-	fmt.Fprintln(w, "::set-output name=time::"+now().String())
+	core.Debug(now().String())
+	core.SetOutput("time", now().String())
 }
 
 func main() {
-	runMain(os.Stdout)
+	runMain()
 }
