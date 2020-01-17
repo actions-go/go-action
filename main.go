@@ -13,6 +13,7 @@ var now = func() time.Time {
 }
 
 func runMain(w io.Writer) {
+	fmt.Println("hello world")
 	sleep := os.Getenv("INPUT_MILLISECONDS")
 	fmt.Fprintf(w, "::debug::Waiting %s milliseconds\n", sleep)
 	fmt.Fprintln(w, "::debug::"+now().String())
