@@ -14,7 +14,6 @@ var now = func() time.Time {
 }
 
 func runMain() {
-	fmt.Println("hello world")
 	sleep := os.Getenv("INPUT_MILLISECONDS")
 	core.Debug(fmt.Sprintf("Waiting %s milliseconds", sleep))
 	core.Debug(now().String())
