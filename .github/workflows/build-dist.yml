@@ -1,9 +1,10 @@
-name: Build action
-
-on:
+name: "build-dist"
+on: # rebuild any branch changes
   push:
-    branches:
-      - releases/*
+    paths:
+      - '*'
+      - '**/*'
+      - '!dist/**'
 
 jobs:
   build:
@@ -35,5 +36,5 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: main-windows-latest
-      - uses: actions-go/releaser@0.1
+      - uses: actions-go/update@v1
 
