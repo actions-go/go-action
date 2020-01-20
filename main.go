@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/tjamet/go-github-action-toolkit/core"
+	"github.com/actions-go/toolkit/core"
 )
 
 var now = func() time.Time {

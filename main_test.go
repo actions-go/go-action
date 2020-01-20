@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tjamet/go-github-action-toolkit/core"
+	"github.com/actions-go/toolkit/core"
 )
 
 const (

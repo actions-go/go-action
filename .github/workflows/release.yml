@@ -35,5 +35,5 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: main-windows-latest
-      - uses: actions-go/release@releases/v1
+      - uses: actions-go/releaser@0.1
 
