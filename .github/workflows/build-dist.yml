@@ -5,6 +5,10 @@ on: # rebuild any branch changes
       - '*'
       - '**/*'
       - '!dist/**'
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
 
 jobs:
   build:
@@ -36,5 +40,7 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: main-windows-latest
+      - uses: actions/download-artifact@v1
+        with:
+          name: main-windows-latest
       - uses: actions-go/update@v1
-
