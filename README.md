@@ -31,7 +31,7 @@ $ go test -v ./...
   === RUN   TestRunMain
   --- PASS: TestRunMain (0.01s)
   PASS
-  ok      github.com/tjamet/go-action-template    0.315s
+  ok      github.com/actions-go/go-action    0.315s
 
 ...
 ```
@@ -109,7 +109,7 @@ See the [actions tab](https://github.com/actions/javascript-action/actions) for 
 After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and tested action
 
 ```yaml
-uses: tjamet/go-action-template@master
+uses: actions-go/go-action@master
 with:
   milliseconds: 1000
 ```

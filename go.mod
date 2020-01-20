@@ -1,4 +1,4 @@
-module github.com/tjamet/go-action-template
+module github.com/actions-go/go-action
 
 go 1.13
 
