@@ -5,7 +5,7 @@ on: # rebuild any branch changes
       - '*'
       - '**/*'
       - '!dist/**'
-    branches:
+    branches-ignore:
       - '*'
     tags-ignore:
       - '*'
