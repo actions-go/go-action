@@ -31,16 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: main-ubuntu-latest
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: main-macos-latest
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: main-windows-latest
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: main-windows-latest
       - uses: actions-go/update@v1
