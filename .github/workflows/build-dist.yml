@@ -43,7 +43,4 @@ jobs:
         with:
           name: main-windows-latest
           path: main-windows-latest
-      - uses: actions/download-artifact@v2.1.0
-        with:
-          name: main-windows-latest
       - uses: actions-go/update@v1
