@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/actions-go/toolkit/core"
+	"github.com/stretchr/testify/assert"
 )
 
 const (
@@ -29,13 +29,13 @@ func TestRunMain(t *testing.T) {
 	}
 	core.SetStdout(w)
 	runMain()
-	w.String()
+
 	assert.Equal(t, errorOutput, w.String())
-	os.Setenv("INPUT_MILLISECONDS", "10")
+	os.Setenv("INPUT_MYINPUT", "10")
 
 	w = bytes.NewBuffer(nil)
 	core.SetStdout(w)
 	runMain()
-	w.String()
+
 	assert.Equal(t, successOutput, w.String())
 }

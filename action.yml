@@ -6,5 +6,20 @@ inputs:
     description: 'input description here'
     default: 'default value if applicable'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "composite"
+  steps:
+  - run: |
+      # This is hacky but we don't have this ref anywhere else
+      echo "action-ref=$(basename ${{ github.action_path }})" >> ${GITHUB_OUTPUT}
+    id: action-ref
+    shell: bash
+  - uses: actions-go/go-install@main
+    id: install
+    with:
+      module: "github.com/actions-go/go-action@${{ steps.action-ref.outputs.action-ref != '.' && steps.action-ref.outputs.action-ref || github.sha }}"
+  - run: |
+      ${{ steps.install.outputs.install-path }}
+      echo "${{ toJSON(inputs) }}"
+    shell: bash
+    env:
+      ACTION_GO_INPUTS: "${{ toJSON(inputs) }}"

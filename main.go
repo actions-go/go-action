@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 	"time"
 
@@ -14,7 +13,11 @@ var now = func() time.Time {
 }
 
 func runMain() {
-	sleep := os.Getenv("INPUT_MILLISECONDS")
+	sleep, ok := core.GetInput("myInput")
+	if !ok {
+		core.Error("Unable to find required input myInput")
+	}
+	fmt.Println(sleep)
 	core.Debug(fmt.Sprintf("Waiting %s milliseconds", sleep))
 	core.Debug(now().String())
 	delay, err := strconv.Atoi(sleep)
