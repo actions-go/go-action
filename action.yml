@@ -18,6 +18,7 @@ runs:
     with:
       module: "github.com/actions-go/go-action@${{ steps.action-ref.outputs.action-ref != '.' && steps.action-ref.outputs.action-ref || github.sha }}"
   - run: |
+      echo "${{ toJSON(github) }}"
       ${{ steps.install.outputs.install-path }}
     shell: bash
     env:
