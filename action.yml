@@ -5,24 +5,22 @@ inputs:
   myInput:              # change this
     description: 'input description here'
     default: 'default value if applicable'
+outputs:
+  time:
+    value: ${{ steps.run.outputs.time }}
 runs:
   using: "composite"
   steps:
-  - uses: actions/setup-go@v4
+  - id: build-action
+    name: Build go action
+    uses: actions-go/build@v1
     with:
-      go-version: 1.21
-  - run: |
-      (
-        cd "${{ github.action_path }}"
-        out="${{ github.action_path }}/action"
-        go build -o "${out}" .
-        echo "install-path=${out}" >> "${GITHUB_OUTPUT}"
-      )
-    id: build
+      action_path: ${{ github.action_path }}
+      action: ${{ github.action }}
+      go-version: "1.21" # defaults to 1.21
+  - name: Run my action
     shell: bash
-  - run: |
-      echo "${{ toJSON(github) }}"
-      ${{ steps.install.build.install-path }}
-    shell: bash
+    id: run
+    run: ${{ steps.build-action.outputs.install-path }}
     env:
       ACTION_GO_INPUTS: "${{ toJSON(inputs) }}"

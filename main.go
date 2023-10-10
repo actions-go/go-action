@@ -32,4 +32,5 @@ func main() {
 	time.Sleep(time.Duration(delay) * time.Millisecond)
 	core.Debug(now().String())
 	core.SetOutput("time", now().String())
+	core.Info("All good!")
 }

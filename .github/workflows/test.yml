@@ -9,5 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
+      id: exec
       with: 
         myInput: 1000
+    - run: echo "${{ steps.exec.outputs.time }}"
