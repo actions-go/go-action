@@ -2,9 +2,6 @@ name: "build-test"
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
-    branches:
-      - master
-      - 'releases/*'
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -12,5 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
+      id: exec
       with: 
-        milliseconds: 1000
+        myInput: 1000
+    - run: echo "${{ steps.exec.outputs.time }}"
